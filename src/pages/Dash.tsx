@@ -252,7 +252,7 @@ const Dashboard: React.FC = () => {
       <header>
         <div className="logo">
           <div className="logo-icon"></div>
-          CARDANO
+          ADAVERSE
         </div>
         <nav>
           <Link to="/dash">Stake</Link>
