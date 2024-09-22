@@ -68,7 +68,6 @@ const Dashboard: React.FC = () => {
   const [lucid, setLucid] = useState<Lucid | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(true); // New state for preloader
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -98,8 +97,6 @@ const Dashboard: React.FC = () => {
     } catch (error) {
       console.error('Error initializing Lucid:', error);
       setError('Failed to initialize wallet. Please try again.');
-    } finally {
-      setIsLoading(false); // Set loading to false after initialization
     }
   };
 
@@ -252,11 +249,6 @@ const Dashboard: React.FC = () => {
   
   return (
     <div className="dashboard">
-      {isLoading && (
-        <div className="preloader-container">
-          <div className="preloader"></div>
-        </div>
-      )}
       <header>
         <div className="logo">
           <div className="logo-icon"></div>
