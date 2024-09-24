@@ -121,7 +121,7 @@ const Dashboard: React.FC = () => {
       const data = await response.json();
 
       if (data.data && Array.isArray(data.data)) {
-        const formattedPools = data.data.slice(0, 1000).map((pool: any) => ({
+        const formattedPools = data.data.slice(0, 3000).map((pool: any) => ({
           id: pool.pool_id,
           name: pool.name || `Pool ${pool.pool_id.slice(0, 6)}...`
         }));
